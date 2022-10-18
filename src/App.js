@@ -1,22 +1,44 @@
+import { GetPopularMovies } from "./Services/GetPopularMovies";
 
-function App() {
+export const App = () => {
+
+  const { movies, page, setPage, loading } = GetPopularMovies()
+
+  const handlePreviousPage = () => {
+    page > 1 ? setPage(page - 1) : setPage(1)
+  }
+
+  const handleNextPage = () => {
+    setPage(page +1)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        {
+
+          loading 
+          ? <h1>Loading</h1>
+          : movies.map(movie => {
+            return <p>{movie.title}</p>
+          })
+
+        }
+
+        <div className="container">
+        <button onClick={handlePreviousPage} className="homeActions">
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-skip-backward-fill" viewBox="0 0 16 16"> <path d="M.5 3.5A.5.5 0 0 0 0 4v8a.5.5 0 0 0 1 0V8.753l6.267 3.636c.54.313 1.233-.066 1.233-.697v-2.94l6.267 3.636c.54.314 1.233-.065 1.233-.696V4.308c0-.63-.693-1.01-1.233-.696L8.5 7.248v-2.94c0-.63-.692-1.01-1.233-.696L1 7.248V4a.5.5 0 0 0-.5-.5z"/> </svg>
+
+        </button>
+
+        <div>{page}</div>
+
+        <button onClick={handleNextPage} className="homeActions" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-skip-forward-fill" viewBox="0 0 16 16"> <path d="M15.5 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V8.753l-6.267 3.636c-.54.313-1.233-.066-1.233-.697v-2.94l-6.267 3.636C.693 12.703 0 12.324 0 11.693V4.308c0-.63.693-1.01 1.233-.696L7.5 7.248v-2.94c0-.63.693-1.01 1.233-.696L15 7.248V4a.5.5 0 0 1 .5-.5z"/> </svg>
+          
+        </button>
+      </div>
     </div>
   );
 }
-
-export default App;
