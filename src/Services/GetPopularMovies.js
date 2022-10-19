@@ -9,7 +9,6 @@ export const GetPopularMovies = () => {
   
   
   const API_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=${page}`
-  console.log(API_URL)
   
   useEffect(() => {
     
