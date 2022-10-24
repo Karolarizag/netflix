@@ -4,14 +4,63 @@
 
 @layer components {
 
-  .container { display: flex; flex-wrap: wrap; justify-content: center; }
+  html {
+    @apply bg-base text-white
+  }
+
+  h5 {
+    @apply mb-2 font-bold tracking-tight text-white
+  }
+
+  img {
+    @apply h-80
+  }
+
+  .container { @apply flex flex-wrap justify-center }
+
+  .btn-primary {
+    @apply inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-primary rounded hover:bg-secondary focus:ring-4 focus:outline-none focus:ring-primary
+  }
   
   .btn-previous {
-    @apply py-2 px-4 text-sm font-medium text-gray-900 bg-white rounded-l-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white
+    @apply py-2 px-4 text-sm font-medium text-white bg-primary rounded-l-lg border border-base hover:bg-secondary focus:z-10 focus:ring-2 
+  }
+
+  .btn-middle {
+    @apply py-2 px-4 text-sm font-medium text-white bg-primary border-t border-b border-base hover:cursor-default
   }
 
   .btn-next {
-    @apply py-2 px-4 text-sm font-medium text-gray-900 bg-white rounded-r-md border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white
+    @apply py-2 px-4 text-sm font-medium text-white bg-primary rounded-r-md border border-base hover:bg-secondary focus:z-10 focus:ring-2 
+  }
+
+  .badge {
+    @apply inline-flex items-center text-base font-semibold mr-2 px-2.5 py-0.5 rounded text-sm
+  }
+
+  .badge-alert {
+    @apply bg-primary text-alert text-white text-sm font-semibold mr-2 px-2.5 py-0.5 rounded
+  }
+
+  .movie-card {
+    @apply rounded shadow-md m-1 w-48 h-80 relative
+  }
+
+  .movie-card .card-back {
+    @apply hidden
+  }
+
+  .movie-card:hover .card-hover {
+    @apply w-full h-full
+  }
+
+
+  .movie-card:hover .card-back {
+    @apply block bg-gradient-to-r from-base flex flex-col justify-center align-bottom
+  }
+
+  .card-front, .card-back {
+    @apply absolute 
   }
 
 }
