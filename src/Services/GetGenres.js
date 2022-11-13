@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
 
-export const GetPopularMovies = () => {
+export const GetGenres = () => {
   const [ loading, setLoading ] = useState(false)
-  const [ popularMovies, setPopularMovies ] = useState([])
-  const API_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`
+  const [ genres, setGenres ] = useState([])
+  const API_URL = `https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
+  
 
   useEffect(() => {
     const fetchData = async () => {
@@ -11,10 +12,9 @@ export const GetPopularMovies = () => {
       const request = await fetch(API_URL)
       const response = await request.json()
       setLoading(false)
-      setPopularMovies(response.results)
+      setGenres(response.genres)
     }
     fetchData()
   }, [API_URL])
-
-  return { popularMovies, loading }
+  return { genres, loading }
 }

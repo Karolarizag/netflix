@@ -16,7 +16,9 @@
     @apply h-80
   }
 
-  .container { @apply flex flex-wrap justify-center }
+  .container { 
+    @apply flex flex-wrap justify-center 
+  }
 
   .btn-primary {
     @apply inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-primary rounded hover:bg-secondary focus:ring-4 focus:outline-none focus:ring-primary
@@ -61,6 +63,14 @@
 
   .card-front, .card-back {
     @apply absolute 
+  }
+  
+  .title-section {
+    @apply text-2xl font-semibold px-20 pb-3 pt-14
+  }
+
+  .movies-section {
+    @apply pl-10
   }
 
 }

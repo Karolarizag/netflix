@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import { parseDate } from '../../Services/Utils'
 
 export const MovieCard = ({ movie }) => {
 
