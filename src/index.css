@@ -2,7 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
 @layer components {
+
+  /* Global styles */
+
+  p, h1, h2, h3, h4, h5 {
+    font-family: 'Lato', sans-serif;
+  }
 
   html {
     @apply bg-base text-white
@@ -23,18 +31,6 @@
   .btn-primary {
     @apply inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-primary rounded hover:bg-secondary focus:ring-4 focus:outline-none focus:ring-primary
   }
-  
-  .btn-previous {
-    @apply py-2 px-4 text-sm font-medium text-white bg-primary rounded-l-lg border border-base hover:bg-secondary focus:z-10 focus:ring-2 
-  }
-
-  .btn-middle {
-    @apply py-2 px-4 text-sm font-medium text-white bg-primary border-t border-b border-base hover:cursor-default
-  }
-
-  .btn-next {
-    @apply py-2 px-4 text-sm font-medium text-white bg-primary rounded-r-md border border-base hover:bg-secondary focus:z-10 focus:ring-2 
-  }
 
   .badge {
     @apply inline-flex items-center text-base font-semibold mr-2 px-2.5 py-0.5 rounded text-sm
@@ -43,9 +39,45 @@
   .badge-alert {
     @apply bg-primary text-alert text-white text-sm font-semibold mr-2 px-2.5 py-0.5 rounded
   }
+  
+  .title-section {
+    @apply text-2xl font-semibold px-20 pb-3 pt-14
+  }
+
+  /* PAGES */
+
+  /* Home page */
+
+  .movies-section {
+    @apply pl-10
+  }
+  
+  .home-section {
+    @apply relative top-[-250px] z-10
+  }
+
+  /* Detail page */
+  
+  /* COMPONENTS */
+
+  /* Header */
+
+  .header {
+    @apply sticky top-0 z-20 bg-base
+  }
+
+  /* Movie card */
 
   .movie-card {
-    @apply rounded shadow-md m-1 w-48 h-80 relative
+    @apply rounded shadow-md m-1 w-56 h-36 relative
+  }
+
+  .movie-card .movie-img {
+     @apply rounded w-full h-full absolute
+  }
+
+  .netflix-icon {
+    @apply h-10 relative top-3
   }
 
   .movie-card .card-back {
@@ -56,29 +88,50 @@
     @apply w-full h-full
   }
 
-
   .movie-card:hover .card-back {
-    @apply block bg-gradient-to-r from-base flex flex-col justify-center align-bottom
+    @apply block bg-[#101010da] flex flex-col justify-center align-bottom top-0
   }
 
   .card-front, .card-back {
     @apply absolute 
   }
-  
-  .title-section {
-    @apply text-2xl font-semibold px-20 pb-3 pt-14
-  }
 
-  .movies-section {
-    @apply pl-10
-  }
-
-  .home-header {
-    @apply absolute w-screen lg:h-[750px]
-  }
-
-  .home-section {
-     @apply relative lg:top-[550px] md:top-40
+  .movie-card button {
+    @apply ml-1
   }
   
+  /* Pagination */
+
+  /* .btn-previous {
+    @apply py-2 px-4 text-sm font-medium text-white bg-primary rounded-l-lg border border-base hover:bg-secondary focus:z-10 focus:ring-2 
+  }
+
+  .btn-middle {
+    @apply py-2 px-4 text-sm font-medium text-white bg-primary border-t border-b border-base hover:cursor-default
+  }
+
+  .btn-next {
+    @apply py-2 px-4 text-sm font-medium text-white bg-primary rounded-r-md border border-base hover:bg-secondary focus:z-10 focus:ring-2 
+  } */
+  
+}
+
+.home-header {
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-image: url(https://cdn.animum3d.com/wp-content/uploads/2020/03/25131902/cabecera-blog-onward.jpg);
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1; 
+}
+
+.home-header::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #101010, #10101000);
+  z-index: -1;
 }

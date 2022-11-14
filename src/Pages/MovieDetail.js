@@ -5,9 +5,13 @@ export const MovieDetail = () => {
 
   const {id} = useParams()
   const {movie, loading} = GetMovieDetails(id)
+  const img = `${process.env.REACT_APP_API_IMG}${movie.poster}`
+  console.log(movie)
 
   return (
-    <div>{movie.title}</div>
+    <>
+      <img scr={img} alt={movie.title} />
+    </>
   )
 
 }

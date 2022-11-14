@@ -16,7 +16,7 @@ export const Home = () => {
 
   return (
     <div>
-      <img class="home-header" src="https://cdn.animum3d.com/wp-content/uploads/2020/03/25131902/cabecera-blog-onward.jpg" alt="home-page" /> 
+      <div class="home-header"></div>
       <div class="home-section">
         <div class="title-section">Popular movies</div>
         <div class="movies-section">
