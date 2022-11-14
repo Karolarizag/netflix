@@ -16,11 +16,14 @@ export const Home = () => {
 
   return (
     <div>
-      <div class="title-section">Popular movies</div>
-      <div class="movies-section">
-        <ShowMovies props={popularMovies} />
-      </div> 
-      { movies }
+      <img class="home-header" src="https://cdn.animum3d.com/wp-content/uploads/2020/03/25131902/cabecera-blog-onward.jpg" alt="home-page" /> 
+      <div class="home-section">
+        <div class="title-section">Popular movies</div>
+        <div class="movies-section">
+          <ShowMovies props={popularMovies} />
+        </div> 
+        { movies }
+      </div>
     </div>
   );
 }

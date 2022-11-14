@@ -73,4 +73,12 @@
     @apply pl-10
   }
 
+  .home-header {
+    @apply absolute w-screen lg:h-[750px]
+  }
+
+  .home-section {
+     @apply relative lg:top-[550px] md:top-40
+  }
+  
 }
