@@ -1,12 +1,11 @@
 import { useParams } from "react-router-dom"
 import { GetMovieDetails } from "../Services/GetMovieDetails"
-import { API_IMG } from "../Services/Utils"
 
 export const MovieDetail = () => {
 
   const {id} = useParams()
-  const {movie, loading} = GetMovieDetails(id)
-  const img = `${API_IMG}${movie.poster_path}`
+  const {movie} = GetMovieDetails(id)
+  const img = `${process.env.REACT_APP_API_IMG}${movie.poster_path}`
   console.log(movie)
 
   return (

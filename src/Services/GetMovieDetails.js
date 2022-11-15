@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react"
-import { API_KEY } from "./Utils"
 
 export const GetMovieDetails = ( id ) => {
-  const API_MOVIE_URL = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`
+  const API_MOVIE_URL = `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
   const [ movie, setMovie ] = useState({})
   const [ loading, setLoading ] = useState(true)
   

@@ -7,6 +7,3 @@ export const parseDate = (item) => {
   const movieDate = `${months[month]} ${day}, ${year}`
   return { movieDate }
 }
-
-export const API_KEY ='8a539ea6062f5408ae85f3881bfed90e'
-export const API_IMG ='https://image.tmdb.org/t/p/w500/'
