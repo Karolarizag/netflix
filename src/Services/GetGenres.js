@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
+import { API_KEY } from "./Utils"
 
 export const GetGenres = () => {
   const [ loading, setLoading ] = useState(false)
   const [ genres, setGenres ] = useState([])
-  const API_URL = `https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
+  const API_URL = `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=en-US`
   
 
   useEffect(() => {

@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom'
 import { add, arrowDownCircle, like, play, netflix } from '../../Services/icons'
+import { API_IMG } from '../../Services/Utils'
 
 export const MovieCard = ({ movie }) => {
 
-  const img = `${process.env.REACT_APP_API_IMG}${movie.backdrop_path}`
+  const img = `${API_IMG}${movie.backdrop_path}`
   const movieTitle = movie.title.length > 25 ? `${movie.title.slice(0, 25)}...` : movie.title
 
   return (
