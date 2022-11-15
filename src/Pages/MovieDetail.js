@@ -5,13 +5,19 @@ export const MovieDetail = () => {
 
   const {id} = useParams()
   const {movie, loading} = GetMovieDetails(id)
-  const img = `${process.env.REACT_APP_API_IMG}${movie.poster}`
+  const img = `${process.env.REACT_APP_API_IMG}${movie.poster_path}`
   console.log(movie)
 
   return (
-    <>
-      <img scr={img} alt={movie.title} />
-    </>
+    <div class="detail-page">
+      <div class="detail-background" style={{backgroundImage: `url(${img})`}} />
+      <div class="detail-content">
+        <img class="detail-poster" src={img} alt={movie.title} />
+        <div>
+          <h1>{movie.title}</h1>
+        </div>
+      </div>
+    </div>
   )
 
 }

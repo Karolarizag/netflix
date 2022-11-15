@@ -2,26 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
 @layer components {
 
   /* Global styles */
 
-  p, h1, h2, h3, h4, h5 {
+  p {
     font-family: 'Lato', sans-serif;
   }
 
-  html {
-    @apply bg-base text-white
+  h1, h2, h3, h4, h5 {
+    font-family: 'Bebas Neue', cursive;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 34px;
+  }
+
+  h3 {
+    font-size: 29px;
+  }
+
+  h4 {
+    font-size: 25px;
   }
 
   h5 {
-    @apply mb-2 font-bold tracking-tight text-white
+    font-size: 21px;
   }
 
-  img {
-    @apply h-80
+  html {
+    @apply bg-base text-white w-screen
   }
 
   .container { 
@@ -57,6 +74,22 @@
   }
 
   /* Detail page */
+
+  .detail-background {
+    @apply absolute w-full bg-cover bg-center h-[400px] opacity-20
+  }
+
+  .detail-poster {
+    @apply  sm:h-[400px] md:h-[600px] lg:h-[600px]
+  }
+
+  .detail-content {
+     @apply relative lg:top-20 lg:ml-20 lg:mx-0 sm:mx-auto sm:top-20 flex flex-wrap sm:justify-center lg:justify-start
+  }
+
+  .detail-content div {
+     @apply w-auto min-w-[70vh] mx-10
+  }
   
   /* COMPONENTS */
 
