@@ -29,7 +29,7 @@ export const MovieCard = ({ movie }) => {
         </div>
         <h5>{movieTitle}</h5>
         <div class="mb-2">
-          <span class={`badge bg-alert ${movie.adult ? 'bg-alert' : 'bg-success'}`}>{movie.adult ? '+18' : '+12'}</span>
+          <span class={`badge text-base bg-alert ${movie.adult ? 'bg-alert' : 'bg-success'}`}>{movie.adult ? '+18' : '+12'}</span>
         </div>
       </div>
     </div>

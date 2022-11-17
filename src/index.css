@@ -38,19 +38,19 @@
   }
 
   html {
-    @apply bg-base text-white w-screen
+    @apply bg-base text-white
+  }
+
+  .button-primary {
+    @apply bg-white py-2 pl-4 pr-5 flex text-base font-bold hover:bg-secondary hover:text-white
   }
 
   .container { 
-    @apply flex flex-wrap justify-center 
-  }
-
-  .btn-primary {
-    @apply inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-primary rounded hover:bg-secondary focus:ring-4 focus:outline-none focus:ring-primary
+    @apply flex flex-wrap
   }
 
   .badge {
-    @apply inline-flex items-center text-base font-semibold mr-2 px-2.5 py-0.5 rounded text-sm
+    @apply inline-flex items-center font-semibold mr-2 px-2.5 py-0.5 rounded text-sm mt-1
   }
 
   .badge-alert {
@@ -87,8 +87,8 @@
      @apply relative lg:top-20 lg:ml-20 lg:mx-0 sm:mx-auto sm:top-20 flex flex-wrap sm:justify-center lg:justify-start
   }
 
-  .detail-content div {
-     @apply w-auto min-w-[70vh] mx-10
+  .movie-info {
+     @apply w-auto  md:w-[667px] mx-10
   }
   
   /* COMPONENTS */
