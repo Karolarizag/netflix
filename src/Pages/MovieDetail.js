@@ -3,11 +3,12 @@ import { GetMovieDetails } from "../Services/GetMovieDetails"
 import { GetSimilarMovies } from "../Services/GetSimilarMovies"
 import { playOutlined, star } from "../Services/icons"
 import { MovieCard } from "../Components/MovieCard"
+import { ReviewCard } from "../Components/ReviewCard"
 
 export const MovieDetail = () => {
 
   const {id} = useParams()
-  const {movie, loading} = GetMovieDetails(id)
+  const {movie, reviews, loading} = GetMovieDetails(id)
   const {similarMovies, loadingMovies} = GetSimilarMovies(id)
   const img = `${process.env.REACT_APP_API_IMG}${movie.backdrop_path}`
   const poster = `${process.env.REACT_APP_API_IMG}${movie.poster_path}`
@@ -42,7 +43,20 @@ export const MovieDetail = () => {
     </a>
   ) : null
 
-  console.log(movie)
+  const showReviews = reviews.length > 0 ? (
+    <div>
+      <h2 class="text-center">Reviews:</h2>
+      <div class="flex flex-wrap justify-center w-screen mx-auto mb-10">
+        {
+          reviews.map(rev => {
+            return (
+              <ReviewCard props={rev} key={rev.id} />
+              )
+            })
+        }
+      </div>
+    </div>
+  ) : null
 
   return (
     <>
@@ -85,12 +99,15 @@ export const MovieDetail = () => {
             {button}
           </div>
         </div>
-        <div class="mt-40">
-          <h2 class="text-center">Similar movies:</h2>
+        
+
+        <div class="mt-32">
+          <h2 class="text-center my-0">Similar movies:</h2>
           <div class="container flex-wrap justify-center w-screen mx-auto mb-10">
             {similarMoviesArray}
           </div>
         </div>
+        {showReviews}
     </div>
     }
     </>

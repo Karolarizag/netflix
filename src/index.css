@@ -9,7 +9,7 @@
 
   /* Global styles */
 
-  p {
+  p, a {
     font-family: 'Lato', sans-serif;
   }
 
@@ -42,7 +42,7 @@
   }
 
   .button-primary {
-    @apply bg-white py-2 pl-4 pr-5 flex text-base font-bold hover:bg-secondary hover:text-white
+    @apply bg-white py-2 pl-4 pr-5 flex text-base font-bold hover:bg-secondary hover:text-white rounded
   }
 
   .container { 
